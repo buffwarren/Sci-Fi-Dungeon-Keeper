@@ -225,6 +225,12 @@ class Unit {
 		{
 			this.destroy();
 		}
+		else
+		{
+			kill_audio.play();
+			this.destroy();
+		}
+
 	}
 	changeSprite() {
 		this.plane.material.color.setHex( 0xff0000 );
@@ -234,7 +240,7 @@ class Unit {
 	}
 
 	destroy() {
-		modifyPower(5);
+		modifyPower(10);
 		this.mobState = MOBSTATE_NONE;
 		this.scene.remove(this.plane);
 		playSound('../sfx/EnemyDie.wav');
